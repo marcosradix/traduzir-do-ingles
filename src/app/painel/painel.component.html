@@ -6,6 +6,12 @@
                         </div>
                         <div class="col-sm-6">
                                 <app-tentativas></app-tentativas>
+                               Acertos -> {{acertos}}
+                        </div>
+                        <div class="row">
+                            <div class="col text-right">
+                                    <button type="button" style="margin-top:-75px;" class="btn btn-warning" (click)="resetarPartida()">Reiniciar</button>
+                            </div>
                         </div>
                     </div>
                 

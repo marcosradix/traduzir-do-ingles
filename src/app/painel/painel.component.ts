@@ -8,11 +8,12 @@ import { FRASES } from './frases-mock';
   styleUrls: ['./painel.component.css']
 })
 export class PainelComponent implements OnInit {
-areaTexto:string;
+areaTexto:string="";
 instrucao:string ="Traduza a frase: ";
 indice: number =0;
 public frases: Array<Frase> = FRASES;
 progresso:number=0;
+acertos:number = 0;
   constructor() {}
 
   ngOnInit() {
@@ -20,6 +21,7 @@ progresso:number=0;
   incrementarProgresso(){
     if(this.indice <= (this.frases.length -1)){
       if(this.frases[this.indice].frasePtBr.toLowerCase() == this.areaTexto.toLowerCase()){
+        this.acertos++;
         alert("Você acertou " +this.frases[this.indice].frasePtBr);
       }else{
         if(this.indice <= (this.frases.length -1)){
@@ -28,11 +30,18 @@ progresso:number=0;
       }
       if(this.indice < (this.frases.length -1)){
         this.indice++;
-          this.progresso += (100 / this.frases.length);
+          this.progresso += (100 / (this.frases.length-1));
       }else{
         this.indice = 0;
-        this.progresso = 0;
+      this.progresso = 0;
       }
     }
+    this.areaTexto = "";
+  }
+  resetarPartida(){
+    this.areaTexto = "";
+    this.acertos = 0;
+    this.indice = 0;
+    this.progresso = 0;
   }
 }
