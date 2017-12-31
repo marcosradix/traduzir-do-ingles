@@ -9,15 +9,30 @@ import { FRASES } from './frases-mock';
 })
 export class PainelComponent implements OnInit {
 areaTexto:string;
+instrucao:string ="Traduza a frase: ";
+indice: number =0;
 public frases: Array<Frase> = FRASES;
-  constructor() { console.log(this.frases)}
+progresso:number=0;
+  constructor() {}
 
   ngOnInit() {
   }
-  teste(){
-    alert('Bootstrap ok');
-    console.log(this.areaTexto);
+  incrementarProgresso(){
+    if(this.indice <= (this.frases.length -1)){
+      if(this.frases[this.indice].frasePtBr.toLowerCase() == this.areaTexto.toLowerCase()){
+        alert("Você acertou " +this.frases[this.indice].frasePtBr);
+      }else{
+        if(this.indice <= (this.frases.length -1)){
+          alert("Você errou " +this.frases[this.indice].frasePtBr);
+        }
+      }
+      if(this.indice < (this.frases.length -1)){
+        this.indice++;
+          this.progresso += (100 / this.frases.length);
+      }else{
+        this.indice = 0;
+        this.progresso = 0;
+      }
+    }
   }
-
-
 }

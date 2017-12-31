@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-progress-bar',
@@ -6,18 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./progress-bar.component.css']
 })
 export class ProgressBarComponent implements OnInit {
-progressBar: number = 10;
+@Input() progressBar: number =0;
   constructor() { }
 
   ngOnInit() {
   }
   getPercent():number{
-    return this.progressBar;
-  }
-
-  incrementarProgresso(){
-    if(this.progressBar !=100 && this.progressBar>=0){
-      this.progressBar += 10;
-    }
+      return this.progressBar;
   }
 }
