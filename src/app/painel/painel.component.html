@@ -1,0 +1,29 @@
+    <div class="container">
+        <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-sm-6">
+                                <app-progress-bar></app-progress-bar>
+                        </div>
+                        <div class="col-sm-6">
+                                <app-tentativas></app-tentativas>
+                        </div>
+                    </div>
+                
+                <div class="row">
+                    <div class="col text-left">
+                        <h3>Traduza a frase!</h3>
+                        <p>{{frases[0].fraseEng}}</p>
+
+                        <div class="form-group">
+                                <textarea class="form-control" rows="3" [(ngModel)]="areaTexto"></textarea>
+                              </div>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col text-right">
+                                <button type="button" class="btn btn-primary" (click)="teste()">Avançar</button>
+                        </div>
+                    </div>
+        </div>
+
+  </div>
