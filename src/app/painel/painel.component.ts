@@ -41,7 +41,7 @@ acertos:number = 0;
         if(this.acertos === this.frases.length){
           alert("Você venceu, acertou : " +this.acertos+" de "+ this.frases.length);
         }else{
-          this.tentativas = -1;
+          this.tentativas = 3;
             alert("Você perdeu, acertou : " +this.acertos+" de "+ this.frases.length);
         }
         this.indice = 0;
